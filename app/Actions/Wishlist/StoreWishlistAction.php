@@ -17,7 +17,7 @@ class StoreWishlistAction
             return $this->existsResponse('Already added to wishlist');
         }
 
-        $result = $user->wishlist()->create([
+        $result = $user->wishlist()->firstOrCreate([
             'product_id' => $requestData['product_id'],
         ]);
 
